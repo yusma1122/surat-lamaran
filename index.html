@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Job Application Letter Generator — Pembuat Surat Lamaran Kerja</title>
+  <meta name="description" content="Buat surat lamaran pekerjaan berbahasa Indonesia yang formal dan profesional. Unduh PDF atau cetak langsung dari browser. Data tidak dikirim ke server.">
+
+  <!-- Font Awesome (ikon). Opsional: aplikasi tetap berfungsi tanpanya. -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#letter-form">Lewati ke formulir</a>
+
+  <header class="app-header">
+    <div class="app-header__inner">
+      <div class="brand">
+        <span class="brand__icon" aria-hidden="true"><i class="fa-solid fa-file-signature"></i></span>
+        <div>
+          <h1 class="brand__title">Job Application Letter Generator</h1>
+          <p class="brand__subtitle">Surat lamaran kerja formal berbahasa Indonesia</p>
+        </div>
+      </div>
+      <p class="privacy-note">
+        <i class="fa-solid fa-lock" aria-hidden="true"></i>
+        Data diproses lokal di browser Anda
+      </p>
+    </div>
+  </header>
+
+  <noscript>
+    <p class="noscript-note">Aplikasi ini membutuhkan JavaScript. Aktifkan JavaScript pada browser Anda.</p>
+  </noscript>
+
+  <main class="app-layout">
+
+    <!-- ===================== FORMULIR ===================== -->
+    <div class="form-column">
+      <form id="letter-form" class="letter-form" novalidate autocomplete="on" aria-label="Formulir surat lamaran">
+
+        <div class="status-card" id="form-status" role="status" aria-live="polite">
+          <div class="status-card__head">
+            <span id="status-text" class="status-card__text">Memeriksa formulir…</span>
+            <span id="status-count" class="status-card__count">0/4</span>
+          </div>
+          <div class="progress" aria-hidden="true"><div id="status-bar" class="progress__bar"></div></div>
+        </div>
+
+        <!-- A. Data Pribadi -->
+        <section class="card" aria-labelledby="section-personal">
+          <h2 id="section-personal" class="card__title">
+            <span class="step-badge" aria-hidden="true">A</span> Data Pribadi
+          </h2>
+
+          <div class="field">
+            <label for="fullName">Nama lengkap <span class="required" aria-hidden="true">*</span></label>
+            <input id="fullName" name="fullName" type="text" autocomplete="name" maxlength="100"
+                   placeholder="Contoh: Yusma Rahman" aria-required="true" aria-describedby="error-fullName">
+            <p id="error-fullName" class="field-error" hidden></p>
+          </div>
+
+          <div class="field">
+            <label for="address">Alamat lengkap</label>
+            <textarea id="address" name="address" rows="2" maxlength="300" autocomplete="street-address"
+                      placeholder="Contoh: Jl. Merdeka No. 12, RT 03/RW 04, Muara Teweh, Kalimantan Tengah"></textarea>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" maxlength="100"
+                     placeholder="nama@email.com" inputmode="email" aria-describedby="error-email">
+              <p id="error-email" class="field-error" hidden></p>
+            </div>
+            <div class="field">
+              <label for="phone">Nomor telepon</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="30"
+                     placeholder="Contoh: 0812-3456-7890" inputmode="tel">
+            </div>
+          </div>
+        </section>
+
+        <!-- B. Informasi Lamaran -->
+        <section class="card" aria-labelledby="section-job">
+          <h2 id="section-job" class="card__title">
+            <span class="step-badge" aria-hidden="true">B</span> Informasi Lamaran
+          </h2>
+
+          <div class="field">
+            <label for="position">Posisi yang dilamar <span class="required" aria-hidden="true">*</span></label>
+            <input id="position" name="position" type="text" maxlength="100"
+                   placeholder="Contoh: Staf Administrasi" aria-required="true" aria-describedby="error-position">
+            <p id="error-position" class="field-error" hidden></p>
+          </div>
+
+          <div class="field">
+            <label for="company">Nama perusahaan atau instansi <span class="required" aria-hidden="true">*</span></label>
+            <input id="company" name="company" type="text" maxlength="120"
+                   placeholder="Contoh: PT Borneo Maju Sejahtera" aria-required="true" aria-describedby="error-company">
+            <p id="error-company" class="field-error" hidden></p>
+          </div>
+
+          <div class="field">
+            <label for="companyAddress">Alamat perusahaan <span class="optional">(opsional)</span></label>
+            <textarea id="companyAddress" name="companyAddress" rows="2" maxlength="300"
+                      placeholder="Contoh: Jl. Jenderal Sudirman No. 45, Banjarmasin"></textarea>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="city">Kota tempat surat dibuat</label>
+              <input id="city" name="city" type="text" maxlength="60" autocomplete="address-level2"
+                     placeholder="Contoh: Muara Teweh">
+            </div>
+            <div class="field">
+              <label for="letterDate">Tanggal surat <span class="required" aria-hidden="true">*</span></label>
+              <input id="letterDate" name="letterDate" type="date" aria-required="true" aria-describedby="error-letterDate">
+              <p id="error-letterDate" class="field-error" hidden></p>
+            </div>
+          </div>
+        </section>
+
+        <!-- C. Isi Surat -->
+        <section class="card" aria-labelledby="section-content">
+          <h2 id="section-content" class="card__title">
+            <span class="step-badge" aria-hidden="true">C</span> Isi Surat
+          </h2>
+          <p class="card__hint">
+            Semua kolom di bagian ini opsional. Jika dikosongkan, aplikasi memakai kalimat umum yang
+            tetap profesional tanpa mengarang pengalaman. Setiap baris baru menjadi satu paragraf.
+          </p>
+
+          <div class="field">
+            <label for="openingParagraph">Paragraf pembuka</label>
+            <textarea id="openingParagraph" name="openingParagraph" rows="3" maxlength="800"
+                      placeholder="Contoh: Berdasarkan informasi lowongan di situs resmi perusahaan, saya bermaksud melamar sebagai Staf Administrasi."></textarea>
+          </div>
+
+          <div class="field">
+            <label for="qualifications">Ringkasan kualifikasi atau pengalaman kerja</label>
+            <textarea id="qualifications" name="qualifications" rows="4" maxlength="1500"
+                      placeholder="Contoh: Saya lulusan D3 Administrasi Bisnis dengan pengalaman magang enam bulan di bagian pengarsipan dan mahir menggunakan Microsoft Office."></textarea>
+          </div>
+
+          <div class="field">
+            <label for="motivation">Alasan melamar pekerjaan</label>
+            <textarea id="motivation" name="motivation" rows="3" maxlength="1000"
+                      placeholder="Contoh: Saya tertarik bergabung karena perusahaan Bapak/Ibu dikenal memiliki lingkungan kerja yang mendukung pengembangan karier."></textarea>
+          </div>
+
+          <div class="field">
+            <label for="attachments">Lampiran <span class="optional">(opsional)</span></label>
+            <div class="chip-group" id="attachment-chips" role="group" aria-label="Pilih cepat lampiran">
+              <button type="button" class="chip" data-attachment="Fotokopi KTP" aria-pressed="false">Fotokopi KTP</button>
+              <button type="button" class="chip" data-attachment="Daftar Riwayat Hidup (CV)" aria-pressed="false">CV</button>
+              <button type="button" class="chip" data-attachment="Fotokopi Ijazah" aria-pressed="false">Ijazah</button>
+              <button type="button" class="chip" data-attachment="Fotokopi Transkrip Nilai" aria-pressed="false">Transkrip Nilai</button>
+              <button type="button" class="chip" data-attachment="Pas Foto Terbaru" aria-pressed="false">Pas Foto</button>
+              <button type="button" class="chip" data-attachment="Fotokopi Sertifikat Pendukung" aria-pressed="false">Sertifikat</button>
+              <button type="button" class="chip" data-attachment="Surat Keterangan Catatan Kepolisian (SKCK)" aria-pressed="false">SKCK</button>
+              <button type="button" class="chip" data-attachment="Surat Keterangan Sehat" aria-pressed="false">Surat Sehat</button>
+            </div>
+            <textarea id="attachments" name="attachments" rows="4" maxlength="800"
+                      placeholder="Satu lampiran per baris. Contoh:&#10;Fotokopi KTP&#10;Daftar Riwayat Hidup (CV)&#10;Fotokopi Ijazah dan Transkrip Nilai"></textarea>
+            <p class="field-hint">Klik tombol di atas atau ketik sendiri. Daftar tampil bernomor di surat; kosongkan bila tidak ada lampiran.</p>
+          </div>
+
+          <div class="field">
+            <label for="closingParagraph">Paragraf penutup</label>
+            <textarea id="closingParagraph" name="closingParagraph" rows="3" maxlength="800"
+                      placeholder="Contoh: Saya bersedia mengikuti proses seleksi sesuai jadwal yang ditentukan. Terima kasih atas perhatian Bapak/Ibu."></textarea>
+          </div>
+        </section>
+
+        <!-- D. Tampilan Surat -->
+        <section class="card" aria-labelledby="section-style">
+          <h2 id="section-style" class="card__title">
+            <span class="step-badge" aria-hidden="true">D</span> Tampilan Surat
+          </h2>
+
+          <fieldset class="template-fieldset">
+            <legend>Template</legend>
+            <div class="template-options">
+              <label class="template-card">
+                <input type="radio" name="template" value="classic" checked>
+                <span class="template-card__body">
+                  <span class="template-card__name"><i class="fa-solid fa-scroll" aria-hidden="true"></i> Formal Klasik</span>
+                  <span class="template-card__desc">Surat konvensional dengan tata letak sederhana dan rata kiri-kanan.</span>
+                </span>
+              </label>
+              <label class="template-card">
+                <input type="radio" name="template" value="modern">
+                <span class="template-card__body">
+                  <span class="template-card__name"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> Profesional Modern</span>
+                  <span class="template-card__desc">Kop identitas di atas, tampilan minimalis dengan hierarki rapi.</span>
+                </span>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="field-row field-row--three">
+            <div class="field">
+              <label for="fontFamily">Font</label>
+              <select id="fontFamily" name="fontFamily">
+                <option value="arial">Arial</option>
+                <option value="times">Times New Roman</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="fontSize">Ukuran font</label>
+              <select id="fontSize" name="fontSize">
+                <option value="11">11 pt</option>
+                <option value="12" selected>12 pt</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="lineHeight">Jarak baris</label>
+              <select id="lineHeight" name="lineHeight">
+                <option value="1.15">Rapat</option>
+                <option value="1.3" selected>Normal</option>
+                <option value="1.5">Longgar</option>
+              </select>
+            </div>
+          </div>
+        </section>
+
+        <!-- Data tersimpan -->
+        <section class="card" aria-labelledby="section-storage">
+          <h2 id="section-storage" class="card__title">
+            <span class="step-badge step-badge--icon" aria-hidden="true"><i class="fa-solid fa-database"></i></span> Data &amp; Penyimpanan
+          </h2>
+
+          <label class="switch">
+            <input type="checkbox" id="autosaveToggle" checked>
+            <span class="switch__track" aria-hidden="true"></span>
+            <span class="switch__label">Simpan otomatis di browser ini</span>
+          </label>
+          <p id="save-indicator" class="card__hint" role="status" aria-live="polite">
+            Data hanya disimpan di perangkat Anda (localStorage), tidak dikirim ke server mana pun.
+          </p>
+
+          <div class="button-row">
+            <button type="button" class="btn btn-secondary" data-action="reset">
+              <i class="fa-solid fa-rotate-left btn__icon" aria-hidden="true"></i> Reset Form
+            </button>
+            <button type="button" class="btn btn-danger-outline" data-action="clear-storage">
+              <i class="fa-solid fa-trash-can btn__icon" aria-hidden="true"></i> Hapus Data Tersimpan
+            </button>
+          </div>
+
+          <a class="mobile-jump" href="#preview-panel">
+            <i class="fa-solid fa-arrow-down" aria-hidden="true"></i> Lihat pratinjau &amp; unduh PDF
+          </a>
+        </section>
+      </form>
+    </div>
+
+    <!-- ===================== PRATINJAU ===================== -->
+    <section class="preview-panel" id="preview-panel" aria-labelledby="preview-title">
+      <div class="preview-toolbar">
+        <div class="preview-toolbar__info">
+          <h2 id="preview-title" class="preview-toolbar__title">Pratinjau Surat</h2>
+          <p id="preview-meta" class="preview-toolbar__meta">A4</p>
+        </div>
+        <div class="preview-toolbar__actions">
+          <button type="button" class="btn btn-secondary" data-action="print">
+            <i class="fa-solid fa-print btn__icon" aria-hidden="true"></i> <span>Cetak Surat</span>
+          </button>
+          <button type="button" class="btn btn-primary" data-action="download">
+            <i class="fa-solid fa-file-pdf btn__icon" aria-hidden="true"></i> <span>Unduh PDF</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="preview-scroll" id="preview-scroll">
+        <div class="preview-scaler" id="preview-scaler">
+          <article id="letter-page" class="letter-page" aria-label="Pratinjau surat lamaran"></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <div class="app-footer__inner">
+      <div class="credit">
+        <span class="credit__code" aria-hidden="true">&lt;/&gt;</span>
+        <div class="credit__text">
+          <p class="credit__title">Dibuat oleh <strong>Yusma</strong></p>
+          <p class="credit__sub">Gratis, tanpa login, dan data Anda tetap di browser Anda.</p>
+        </div>
+      </div>
+
+      <nav class="credit__links" aria-label="Profil pembuat aplikasi">
+        <a class="credit-link credit-link--github" href="https://github.com/yusma1122"
+           target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-github" aria-hidden="true"></i>
+          <span>GitHub</span>
+        </a>
+        <a class="credit-link credit-link--linkedin" href="https://www.linkedin.com/in/yusmarahman09/"
+           target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+          <span>LinkedIn</span>
+        </a>
+      </nav>
+    </div>
+  </footer>
+
+  <div id="toast-region" class="toast-region" aria-live="polite" aria-atomic="false"></div>
+
+  <!-- jsPDF via CDN (pembuat PDF). Bila gagal dimuat, pdf-generator.js mencoba CDN cadangan. -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"
+          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="js/letter-generator.js"></script>
+  <script src="js/pdf-generator.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
