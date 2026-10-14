@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Job Application Letter Generator — Pembuat Surat Lamaran Kerja</title>
-  <meta name="description" content="Buat surat lamaran pekerjaan berbahasa Indonesia yang formal dan profesional. Unduh PDF atau cetak langsung dari browser. Data tidak dikirim ke server.">
+  <link rel="icon" type="image/png" href="icon.png">
+  <meta name="description"
+    content="Buat surat lamaran pekerjaan berbahasa Indonesia yang formal dan profesional. Unduh PDF atau cetak langsung dari browser. Data tidak dikirim ke server.">
 
   <!-- Font Awesome (ikon). Opsional: aplikasi tetap berfungsi tanpanya. -->
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
   <a class="skip-link" href="#letter-form">Lewati ke formulir</a>
 
@@ -46,7 +49,9 @@
             <span id="status-text" class="status-card__text">Memeriksa formulir…</span>
             <span id="status-count" class="status-card__count">0/4</span>
           </div>
-          <div class="progress" aria-hidden="true"><div id="status-bar" class="progress__bar"></div></div>
+          <div class="progress" aria-hidden="true">
+            <div id="status-bar" class="progress__bar"></div>
+          </div>
         </div>
 
         <!-- A. Data Pribadi -->
@@ -58,27 +63,27 @@
           <div class="field">
             <label for="fullName">Nama lengkap <span class="required" aria-hidden="true">*</span></label>
             <input id="fullName" name="fullName" type="text" autocomplete="name" maxlength="100"
-                   placeholder="Contoh: Yusma Rahman" aria-required="true" aria-describedby="error-fullName">
+              placeholder="Contoh: Yusma Rahman" aria-required="true" aria-describedby="error-fullName">
             <p id="error-fullName" class="field-error" hidden></p>
           </div>
 
           <div class="field">
             <label for="address">Alamat lengkap</label>
             <textarea id="address" name="address" rows="2" maxlength="300" autocomplete="street-address"
-                      placeholder="Contoh: Jl. Merdeka No. 12, RT 03/RW 04, Muara Teweh, Kalimantan Tengah"></textarea>
+              placeholder="Contoh: Jl. Merdeka No. 12, RT 03/RW 04, Muara Teweh, Kalimantan Tengah"></textarea>
           </div>
 
           <div class="field-row">
             <div class="field">
               <label for="email">Email</label>
               <input id="email" name="email" type="email" autocomplete="email" maxlength="100"
-                     placeholder="nama@email.com" inputmode="email" aria-describedby="error-email">
+                placeholder="nama@email.com" inputmode="email" aria-describedby="error-email">
               <p id="error-email" class="field-error" hidden></p>
             </div>
             <div class="field">
               <label for="phone">Nomor telepon</label>
               <input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="30"
-                     placeholder="Contoh: 0812-3456-7890" inputmode="tel">
+                placeholder="Contoh: 0812-3456-7890" inputmode="tel">
             </div>
           </div>
         </section>
@@ -91,33 +96,35 @@
 
           <div class="field">
             <label for="position">Posisi yang dilamar <span class="required" aria-hidden="true">*</span></label>
-            <input id="position" name="position" type="text" maxlength="100"
-                   placeholder="Contoh: Staf Administrasi" aria-required="true" aria-describedby="error-position">
+            <input id="position" name="position" type="text" maxlength="100" placeholder="Contoh: Staf Administrasi"
+              aria-required="true" aria-describedby="error-position">
             <p id="error-position" class="field-error" hidden></p>
           </div>
 
           <div class="field">
-            <label for="company">Nama perusahaan atau instansi <span class="required" aria-hidden="true">*</span></label>
+            <label for="company">Nama perusahaan atau instansi <span class="required"
+                aria-hidden="true">*</span></label>
             <input id="company" name="company" type="text" maxlength="120"
-                   placeholder="Contoh: PT Borneo Maju Sejahtera" aria-required="true" aria-describedby="error-company">
+              placeholder="Contoh: PT Borneo Maju Sejahtera" aria-required="true" aria-describedby="error-company">
             <p id="error-company" class="field-error" hidden></p>
           </div>
 
           <div class="field">
             <label for="companyAddress">Alamat perusahaan <span class="optional">(opsional)</span></label>
             <textarea id="companyAddress" name="companyAddress" rows="2" maxlength="300"
-                      placeholder="Contoh: Jl. Jenderal Sudirman No. 45, Banjarmasin"></textarea>
+              placeholder="Contoh: Jl. Jenderal Sudirman No. 45, Banjarmasin"></textarea>
           </div>
 
           <div class="field-row">
             <div class="field">
               <label for="city">Kota tempat surat dibuat</label>
               <input id="city" name="city" type="text" maxlength="60" autocomplete="address-level2"
-                     placeholder="Contoh: Muara Teweh">
+                placeholder="Contoh: Muara Teweh">
             </div>
             <div class="field">
               <label for="letterDate">Tanggal surat <span class="required" aria-hidden="true">*</span></label>
-              <input id="letterDate" name="letterDate" type="date" aria-required="true" aria-describedby="error-letterDate">
+              <input id="letterDate" name="letterDate" type="date" aria-required="true"
+                aria-describedby="error-letterDate">
               <p id="error-letterDate" class="field-error" hidden></p>
             </div>
           </div>
@@ -136,42 +143,50 @@
           <div class="field">
             <label for="openingParagraph">Paragraf pembuka</label>
             <textarea id="openingParagraph" name="openingParagraph" rows="3" maxlength="800"
-                      placeholder="Contoh: Berdasarkan informasi lowongan di situs resmi perusahaan, saya bermaksud melamar sebagai Staf Administrasi."></textarea>
+              placeholder="Contoh: Berdasarkan informasi lowongan di situs resmi perusahaan, saya bermaksud melamar sebagai Staf Administrasi."></textarea>
           </div>
 
           <div class="field">
             <label for="qualifications">Ringkasan kualifikasi atau pengalaman kerja</label>
             <textarea id="qualifications" name="qualifications" rows="4" maxlength="1500"
-                      placeholder="Contoh: Saya lulusan D3 Administrasi Bisnis dengan pengalaman magang enam bulan di bagian pengarsipan dan mahir menggunakan Microsoft Office."></textarea>
+              placeholder="Contoh: Saya lulusan D3 Administrasi Bisnis dengan pengalaman magang enam bulan di bagian pengarsipan dan mahir menggunakan Microsoft Office."></textarea>
           </div>
 
           <div class="field">
             <label for="motivation">Alasan melamar pekerjaan</label>
             <textarea id="motivation" name="motivation" rows="3" maxlength="1000"
-                      placeholder="Contoh: Saya tertarik bergabung karena perusahaan Bapak/Ibu dikenal memiliki lingkungan kerja yang mendukung pengembangan karier."></textarea>
+              placeholder="Contoh: Saya tertarik bergabung karena perusahaan Bapak/Ibu dikenal memiliki lingkungan kerja yang mendukung pengembangan karier."></textarea>
           </div>
 
           <div class="field">
             <label for="attachments">Lampiran <span class="optional">(opsional)</span></label>
             <div class="chip-group" id="attachment-chips" role="group" aria-label="Pilih cepat lampiran">
-              <button type="button" class="chip" data-attachment="Fotokopi KTP" aria-pressed="false">Fotokopi KTP</button>
-              <button type="button" class="chip" data-attachment="Daftar Riwayat Hidup (CV)" aria-pressed="false">CV</button>
+              <button type="button" class="chip" data-attachment="Fotokopi KTP" aria-pressed="false">Fotokopi
+                KTP</button>
+              <button type="button" class="chip" data-attachment="Daftar Riwayat Hidup (CV)"
+                aria-pressed="false">CV</button>
               <button type="button" class="chip" data-attachment="Fotokopi Ijazah" aria-pressed="false">Ijazah</button>
-              <button type="button" class="chip" data-attachment="Fotokopi Transkrip Nilai" aria-pressed="false">Transkrip Nilai</button>
-              <button type="button" class="chip" data-attachment="Pas Foto Terbaru" aria-pressed="false">Pas Foto</button>
-              <button type="button" class="chip" data-attachment="Fotokopi Sertifikat Pendukung" aria-pressed="false">Sertifikat</button>
-              <button type="button" class="chip" data-attachment="Surat Keterangan Catatan Kepolisian (SKCK)" aria-pressed="false">SKCK</button>
-              <button type="button" class="chip" data-attachment="Surat Keterangan Sehat" aria-pressed="false">Surat Sehat</button>
+              <button type="button" class="chip" data-attachment="Fotokopi Transkrip Nilai"
+                aria-pressed="false">Transkrip Nilai</button>
+              <button type="button" class="chip" data-attachment="Pas Foto Terbaru" aria-pressed="false">Pas
+                Foto</button>
+              <button type="button" class="chip" data-attachment="Fotokopi Sertifikat Pendukung"
+                aria-pressed="false">Sertifikat</button>
+              <button type="button" class="chip" data-attachment="Surat Keterangan Catatan Kepolisian (SKCK)"
+                aria-pressed="false">SKCK</button>
+              <button type="button" class="chip" data-attachment="Surat Keterangan Sehat" aria-pressed="false">Surat
+                Sehat</button>
             </div>
             <textarea id="attachments" name="attachments" rows="4" maxlength="800"
-                      placeholder="Satu lampiran per baris. Contoh:&#10;Fotokopi KTP&#10;Daftar Riwayat Hidup (CV)&#10;Fotokopi Ijazah dan Transkrip Nilai"></textarea>
-            <p class="field-hint">Klik tombol di atas atau ketik sendiri. Daftar tampil bernomor di surat; kosongkan bila tidak ada lampiran.</p>
+              placeholder="Satu lampiran per baris. Contoh:&#10;Fotokopi KTP&#10;Daftar Riwayat Hidup (CV)&#10;Fotokopi Ijazah dan Transkrip Nilai"></textarea>
+            <p class="field-hint">Klik tombol di atas atau ketik sendiri. Daftar tampil bernomor di surat; kosongkan
+              bila tidak ada lampiran.</p>
           </div>
 
           <div class="field">
             <label for="closingParagraph">Paragraf penutup</label>
             <textarea id="closingParagraph" name="closingParagraph" rows="3" maxlength="800"
-                      placeholder="Contoh: Saya bersedia mengikuti proses seleksi sesuai jadwal yang ditentukan. Terima kasih atas perhatian Bapak/Ibu."></textarea>
+              placeholder="Contoh: Saya bersedia mengikuti proses seleksi sesuai jadwal yang ditentukan. Terima kasih atas perhatian Bapak/Ibu."></textarea>
           </div>
         </section>
 
@@ -187,15 +202,19 @@
               <label class="template-card">
                 <input type="radio" name="template" value="classic" checked>
                 <span class="template-card__body">
-                  <span class="template-card__name"><i class="fa-solid fa-scroll" aria-hidden="true"></i> Formal Klasik</span>
-                  <span class="template-card__desc">Surat konvensional dengan tata letak sederhana dan rata kiri-kanan.</span>
+                  <span class="template-card__name"><i class="fa-solid fa-scroll" aria-hidden="true"></i> Formal
+                    Klasik</span>
+                  <span class="template-card__desc">Surat konvensional dengan tata letak sederhana dan rata
+                    kiri-kanan.</span>
                 </span>
               </label>
               <label class="template-card">
                 <input type="radio" name="template" value="modern">
                 <span class="template-card__body">
-                  <span class="template-card__name"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> Profesional Modern</span>
-                  <span class="template-card__desc">Kop identitas di atas, tampilan minimalis dengan hierarki rapi.</span>
+                  <span class="template-card__name"><i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+                    Profesional Modern</span>
+                  <span class="template-card__desc">Kop identitas di atas, tampilan minimalis dengan hierarki
+                    rapi.</span>
                 </span>
               </label>
             </div>
@@ -230,7 +249,8 @@
         <!-- Data tersimpan -->
         <section class="card" aria-labelledby="section-storage">
           <h2 id="section-storage" class="card__title">
-            <span class="step-badge step-badge--icon" aria-hidden="true"><i class="fa-solid fa-database"></i></span> Data &amp; Penyimpanan
+            <span class="step-badge step-badge--icon" aria-hidden="true"><i class="fa-solid fa-database"></i></span>
+            Data &amp; Penyimpanan
           </h2>
 
           <label class="switch">
@@ -294,13 +314,13 @@
       </div>
 
       <nav class="credit__links" aria-label="Profil pembuat aplikasi">
-        <a class="credit-link credit-link--github" href="https://github.com/yusma1122"
-           target="_blank" rel="noopener noreferrer">
+        <a class="credit-link credit-link--github" href="https://github.com/yusma1122" target="_blank"
+          rel="noopener noreferrer">
           <i class="fa-brands fa-github" aria-hidden="true"></i>
           <span>GitHub</span>
         </a>
-        <a class="credit-link credit-link--linkedin" href="https://www.linkedin.com/in/yusmarahman09/"
-           target="_blank" rel="noopener noreferrer">
+        <a class="credit-link credit-link--linkedin" href="https://www.linkedin.com/in/yusmarahman09/" target="_blank"
+          rel="noopener noreferrer">
           <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
           <span>LinkedIn</span>
         </a>
@@ -311,10 +331,11 @@
   <div id="toast-region" class="toast-region" aria-live="polite" aria-atomic="false"></div>
 
   <!-- jsPDF via CDN (pembuat PDF). Bila gagal dimuat, pdf-generator.js mencoba CDN cadangan. -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"
-          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
   <script src="js/letter-generator.js"></script>
   <script src="js/pdf-generator.js"></script>
   <script src="js/app.js"></script>
 </body>
+
 </html>
